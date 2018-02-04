@@ -23,3 +23,27 @@ for (var i=0; i<xz.length; i++) {
         reve[this.index].style.display='block'
     }
 }
+
+var ImgLoaded = 0
+
+function createImg (data, index) {
+    var parentUL = document.querySelectorAll('.reveal-cond ul')
+    for(var i=0; i<data.length; i++){
+        var img = new Image()
+        img.src = data[i]
+        var li = document.createElement('li')
+        li.appendChild(img)
+        parentUL[index].appendChild(li)
+        if (!index) {
+            img.onload = function () {
+                ImgLoaded += 1
+                if (ImgLoaded == data.length) {
+                    createImg(imgPath.b,1)
+                    createImg(imgPath.c,2)
+                }
+            }
+        }
+    }
+}
+createImg(imgPath.a, 0)
+

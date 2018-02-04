@@ -14,15 +14,15 @@ module.exports = function (req, res, next) {
     var paC = fs.readdirSync(path.resolve('public/backImg/case/c'))
 
     for (var i = 0; i < paA.length; i++) {
-        paA[i] = '/backImg/index/a/' + paA[i]
+        paA[i] = '/backImg/case/a/' + paA[i]
     }
 
     for (var i = 0; i < paB.length; i++) {
-        paB[i] = '/backImg/index/a/' + paB[i]
+        paB[i] = '/backImg/case/b/' + paB[i]
     }
 
     for (var i = 0; i < paC.length; i++) {
-        paC[i] = '/backImg/index/a/' + paC[i]
+        paC[i] = '/backImg/case/c/' + paC[i]
     }
     imagePath.a = paA
     imagePath.b = paB

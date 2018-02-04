@@ -18,11 +18,11 @@ module.exports = function (req, res, next) {
     }
 
     for (var i = 0; i < paB.length; i++) {
-        paB[i] = '/backImg/index/a/' + paB[i]
+        paB[i] = '/backImg/index/b/' + paB[i]
     }
 
     for (var i = 0; i < paC.length; i++) {
-        paC[i] = '/backImg/index/a/' + paC[i]
+        paC[i] = '/backImg/index/c/' + paC[i]
     }
     imagePath.a = paA
     imagePath.b = paB
