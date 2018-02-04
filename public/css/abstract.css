@@ -1,0 +1,59 @@
+.main-title{
+    min-width: 400px;
+    height: 200px;
+    margin:40px auto 0 auto;
+}
+
+.l-rail{
+    width: 40%;
+    height: 1px;
+    background:#00aaff;
+    float: left;
+    margin-top: 50px;
+}
+
+.main-shang{
+    width: 20%;
+    margin-top: 25px;
+    color:#00aaff;
+    font-size: 28px;
+    text-align: center;
+    line-height: 50px;
+    float:left;
+    word-break:break-all;
+}
+
+.r-rail{
+    width: 40%;
+    height: 1px;
+    background:#00aaff;
+    float: right;
+    margin-top: 50px;
+}
+
+.main-shang span{
+    font-size: 18px;
+    color: #777;
+}
+
+.abstract{
+    width: 1200px;
+    height: 800px;
+    margin: 0 auto;
+    font-size: 24px;
+    text-align: center;
+}
+
+.abstract p{
+    color: #888;
+    font-size: 20px;
+}
+
+.back{
+    background-image: url("../img/jianjie.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+

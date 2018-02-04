@@ -1,0 +1,96 @@
+.main-title{
+	min-width: 400px;
+	height: 200px;
+	margin:40px auto 0 auto;
+}
+.l-rail{
+	width: 40%;
+	height: 1px;
+	background:#00aaff;
+	float: left;
+	margin-top: 50px;
+}
+.main-shang{
+	width: 20%;
+	margin-top: 25px;
+	color:#00aaff;
+	font-size: 28px;
+	text-align: center;
+	line-height: 50px;
+	float:left;
+	word-break:break-all;
+}
+.r-rail{
+	width: 40%;
+	height: 1px;
+	background:#00aaff;
+	float: right;
+	margin-top: 50px;
+}
+.main-shang span{
+	font-size: 18px;
+	color: #777;
+}
+.service{;
+    height: 200px;
+	text-align: center;
+	position: relative;
+}
+.service-ent{
+	width: 20%;
+	height: 100%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.arrow{
+	width: 0px;
+	height: 0px;
+	border:40px solid rgba(152,157,10,0);
+	border-top: 40px solid #fff;
+	position: absolute;
+	left: 50%;
+	bottom: -80px;
+	margin-left: -40px;
+	z-index: 99;
+}
+
+.service-text{
+	width: 100%;
+	height: 550px;
+	background: #e9e9e9;
+	display: none;
+}
+
+.service-img{
+	height: 450px;
+	/background: pink;
+	margin-top: 50px;
+	text-align: center;
+	line-height: 450px;
+}
+
+.service-img img{
+	width: 80%;
+	height: 80%;
+}
+
+.service-cond{
+	width: 80%;
+	height: 80%;
+	/background: green;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.service-cond{
+	text-align: left;
+	line-height: 35px;
+}
+
+.service-front{
+	color: #00aaff;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+

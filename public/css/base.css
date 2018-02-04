@@ -1,0 +1,221 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+small{ font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none; }
+a:hover { text-decoration:none;}
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; }
+table { border-collapse:collapse; border-spacing:0; }
+
+html,body{
+    font-family: -apple-system,"PingFang SC","Proxima Nova","Helvetica Neue",Helvetica,"Hiragino Sans GB","STHeitiSC Light","Microsoft YaHei",Arial,sans-serif;
+    min-width: 1200px;
+    overflow: auto;
+}
+
+#header{
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.6));
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    transition: .5s all ease;
+}
+
+.main-container{
+    border-bottom: 180px solid #f2f2f2;
+}
+
+.head-back{
+    width: 100%;
+    height: 0;
+    transition: .5s all ease;
+    background: rgba(48,48,48, 0);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+#carousel-example-generic .item img{
+    width: 100%;
+    height: 550px;
+}
+
+#carousel-example-generic .item{
+    background: #0177bc;
+}
+
+.nav{
+    width: 960px;
+    margin: 0 auto;
+}
+
+.nav img{
+    display: inline-block;
+    width: 25px;
+    margin-right: 5px;
+}
+
+.nav-item{
+    display: inline-block;
+    vertical-align: top;
+    color: #fff;
+    width: 120px;
+    line-height: 80px;
+    font-size: 17px;
+    text-align: center;
+}
+
+.nav-item a {
+    color: #fff;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-item.active a{
+    color: #1081de;
+    border-bottom: 4px solid #1081de;
+}
+
+.logo{
+    display: inline-block;
+    vertical-align: top;
+    color: #fff;
+    line-height: 80px;
+    text-align: center;
+    width: 200px;
+    font-size: 24px;
+}
+
+.content-text{
+    height: 200px;
+    padding: 50px 50px 50px 20px;
+    background: #f2f2f2;
+}
+
+.advert-text{
+    text-align: center;
+    line-height: 50px;
+    color: #555;
+    font-size: 24px;
+}
+
+.advert-text span{
+    margin: 0 20px;
+}
+
+.cir-container{
+    background: #f2f2f2;
+}
+
+.cir-content{
+    min-width: 960px;
+    max-width: 1280px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.cir-box{
+    width: 33%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.lf-cir{
+    width: 130px;
+    height: 130px;
+    margin: 10px;
+    border-radius: 50%;
+    border: 1px solid #d5d5d5;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.lf-cir img{
+    width: 130px;
+    height: 160px;
+}
+
+.rt-content{
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 10px;
+}
+
+.rt-content p{
+    line-height: 40px;
+    color: black;
+    text-indent: 5px;
+}
+
+.fix-bg{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background: url("../img/banner1.png") 0 0 no-repeat;
+    background-size: cover;
+}
+
+.trans-content{
+    height: 300px;
+    border-top: 20px solid #f2f2f2;
+}
+
+.footer{
+    width:100%;
+    height: 200px;
+    background: #272727;
+}
+
+.footer-text{
+    width:1200px;
+    height: 170px;
+    margin: 0 auto;
+}
+
+.copy-right{
+    width: 100%;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    border-top: 1px solid #333;
+    color: #666;
+}
+
+.footer-c{
+    width: 1px;
+    height: 10px;
+}
+
+.footer-text p{
+
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #1081de;
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+
+.footer-text li{
+    color: #fff;
+    opacity: .5;
+    filter: alpha(opacity: 50);
+    line-height: 25px;
+    letter-spacing: 5px;
+}
