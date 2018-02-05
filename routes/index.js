@@ -2,6 +2,7 @@ var IndexAction = require('../controller/index')
 var CaseAction = require('../controller/case')
 var CheckLogin = require('../middleware/index')
 var loginAction = require('../api/login')
+var logoutAction = require('../api/logout')
 module.exports = function (app) {
 	app.get('/', function(req, res, next) {
         IndexAction(req, res, next)
@@ -28,5 +29,8 @@ module.exports = function (app) {
     app.post('/login', function(req, res, next) {
         loginAction(req, res, next)
     })
+    app.post('/logout', function (req, res, next) {
+        logoutAction(req, res, next)
+    });
 };
 
