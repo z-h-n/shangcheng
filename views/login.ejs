@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/base.css">
+</head>
+<body>
+    <input type="text" class="txt" value="admin"/>
+    <input type="text" class="txt" value="123"/>
+    <input type="button" value="登陆" id="login">
+</body>
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script>
+    $('#login').click(function () {
+        $.post('/login', {userName: 'admin', passWord: '123'}, function (result) {
+            console.log(result)
+        })
+    })
+</script>
+</html>
