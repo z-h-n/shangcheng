@@ -5,7 +5,18 @@
     <title><%= title %></title>
 </head>
 <body>
+<input type="button" class="quit" value="退出">
 123123
 </body>
 <script src="/js/jquery.js"></script>
+<script>
+    $(".quit").click(function(){
+        $.post("/logout", {}, function(data,status){
+                console.log(data);
+                if (data.errorNo == 0) {
+                   window.location.href="/login"
+                }
+            });
+    });
+</script>
 </html>
