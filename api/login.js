@@ -7,6 +7,7 @@
 
 module.exports = function (req, res, next) {
     if (req.body.userName == '942785030' && req.body.passWord == '123456') {
+        req.session.user = req.body.userName
         res.send({errorNo: 0, message: '登陆成功'})
     } else {
         res.send({errorNo: 1000, message: '账号密码错误'})
