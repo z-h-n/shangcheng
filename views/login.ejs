@@ -17,11 +17,11 @@
             </div>
             <div class="account">
                 <p>账号</p>
-                <input type="text" class="txt" value="admin"/>
+                <input type="text" class="txt txto"/>
             </div>
             <div class="account">
                 <p>密码</p>
-                <input type="text" class="txt" value="123"/>
+                <input type="password" class="txt txtt"/>
             </div>
             <div class="keep">
                 <input type="checkbox" class="bz"/>
@@ -34,4 +34,18 @@
 </body>
 <script src="/js/jquery.js"></script>
 <script src="/js/bootstrap.min.js"></script>
+<script>
+    $(".ashore").click(function(){
+        $.post("/login",
+            {
+                userName:$('.txto').val(),
+                passWord:$('.txtt').val()
+            },
+            function(data,status){
+                if (data.errorNo == 0) {
+                    window.location.href="/setimage"
+                }
+            });
+    });
+</script>
 </html>
