@@ -5,7 +5,37 @@
     <title><%= title %></title>
 </head>
 <body>
-123123
+<input name="img" type="file" multiple="multiple">
+<button>submit</button>
 </body>
 <script src="/js/jquery.js"></script>
+<script>
+    $("button").on("click", function (e) {
+        e.preventDefault()
+        var obj = new FormData();
+        var files = $("input").get(0).files
+        for (var i = 0; i < files.length; i++) {
+            obj.append("file", files[i]);
+        }
+        obj.append("pagePath", 'index');
+        obj.append("imagePath", 'a');
+        $.ajax({
+            url:"http://localhost:3000/uploadimage",
+            type:"post",
+            data:obj,
+            processData:false, // 不处理数据
+            contentType : false, // 不设置请求头
+            cache:false,
+            success:function(data){
+                console.log(data)
+            }
+        })
+    })
+    $.post('/getallimage', {}, function (data) {
+        console.log(data)
+    })
+    $.post('/deleteimage', {url: '/backImg/index/a/shangcheng2018_2_6_20_41_0_727.png'}, function (data) {
+        console.log(data)
+    })
+</script>
 </html>
