@@ -1,8 +1,11 @@
 var IndexAction = require('../controller/index')
 var CaseAction = require('../controller/case')
 var CheckLogin = require('../middleware/index')
-var loginAction = require('../api/login')
-var logoutAction = require('../api/logout')
+var LoginAction = require('../api/login')
+var LogoutAction = require('../api/logout')
+var UploadAction = require('../api/upload')
+var DeleteAction = require('../api/deleteimage')
+var GetImageAction = require('../api/getallimage')
 module.exports = function (app) {
 	app.get('/', function(req, res, next) {
         IndexAction(req, res, next)
@@ -22,15 +25,24 @@ module.exports = function (app) {
     app.get('/login', function(req, res, next) {
         res.render('login', { title: '尚城墙绘-我们更专业' });
     })
-    app.get('/setimage', CheckLogin ,function(req, res, next) {
+    app.get('/setimage', CheckLogin, function(req, res, next) {
         res.render('setimage', { title: '尚城墙绘-我们更专业' });
     })
     //以下是api路由
     app.post('/login', function(req, res, next) {
-        loginAction(req, res, next)
+        LoginAction(req, res, next)
     })
     app.post('/logout', function (req, res, next) {
-        logoutAction(req, res, next)
+        LogoutAction(req, res, next)
+    });
+    app.post('/uploadimage', function (req, res, next) {
+        UploadAction(req, res, next)
+    });
+    app.post('/deleteimage', function (req, res, next) {
+        DeleteAction(req, res, next)
+    });
+    app.post('/getallimage', function (req, res, next) {
+        GetImageAction(req, res, next)
     });
 };
 
