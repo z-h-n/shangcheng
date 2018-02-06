@@ -26,14 +26,24 @@ module.exports = function (req, res, next) {
     form.uploadDir = 'public/backImg'  // 存储路径
     form.parse(req,function(err, body, files){ // 解析 formData数据
         if(err){ return console.log(err) }
-        files.file.forEach(val => {
+        if (!files.file) {
+            return res.send({errorNo: 1000, message: '未上传任何文件'})
+        }
+        function setIamge(val) {
             let imgPath = val.path // 获取文件路径
             let imgName = 'public/backImg/' + body.pagePath + '/' + body.imagePath + timeHash(val.type) // 修改之后的名字
             let data = fs.readFileSync(imgPath) // 同步读取文件
 
             fs.writeFileSync(imgName,data)
             fs.unlink(imgPath,function(){}) // 删除文件
-        })
+        }
+        if (files.file.length) {
+            files.file.forEach(val => {
+                setIamge(val)
+            })
+        } else {
+            setIamge(files.file)
+        }
         res.send({errorNo: 0, message: '上传成功'})
     })
 }
