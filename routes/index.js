@@ -25,7 +25,7 @@ module.exports = function (app) {
     app.get('/login', function(req, res, next) {
         res.render('login', { title: '尚城墙绘-我们更专业' });
     })
-    app.get('/setimage',function(req, res, next) { //CheckLogin
+    app.get('/setimage', CheckLogin, function(req, res, next) {
         res.render('setimage', { title: '尚城墙绘-我们更专业' });
     })
     //以下是api路由
