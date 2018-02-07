@@ -34,12 +34,13 @@
 </body>
 <script src="/js/jquery.js"></script>
 <script src="/js/bootstrap.min.js"></script>
+<script src="/js/md5.js"></script>
 <script>
     $(".ashore").click(function(){
         $.post("/login",
             {
                 userName:$('.txto').val(),
-                passWord:$('.txtt').val()
+                passWord:md5($('.txtt').val())
             },
             function(data,status){
                 if (data.errorNo == 0) {
@@ -71,7 +72,7 @@
         return '';
     }
 
-    if () {}
+//    if () {}
 
     log.onclick = function () {
         setCookie('userName',txto.value,14)

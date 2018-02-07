@@ -5,10 +5,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var http = require('http');
 
 var HttpRouter = require('./routes/index');
 
 var app = express();
+
+require('dotenv').load();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -49,6 +52,28 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+var port = process.env.PORT || '3000';
+app.set('port', port);
+var server = http.createServer(app);
+server.listen(port);
+server.on('listening', function () {
+    var addr = server.address();
+    var bind = typeof addr === 'string'
+        ? 'pipe ' + addr
+        : 'port ' + addr.port;
+
+    var imageToAscii = require('image-to-ascii');
+    var imgPath      = path.join(__dirname, 'public/img/sign.png');
+    imageToAscii(imgPath, {
+        size: {
+            width: 30
+        }
+    }, function(err, converted) {
+        console.log(err || converted);
+        console.log('Server running at port ' + bind);
+    });
 });
 
 module.exports = app;
