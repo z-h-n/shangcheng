@@ -50,6 +50,7 @@
 
     var log=document.getElementById('login')
     var txto=document.getElementsByClassName('txto')[0]
+    var bz=document.getElementsByClassName('bz')[0]
 
     function setCookie(name, value, iDay)
     {
@@ -58,7 +59,6 @@
 
         document.cookie=name+'='+value+';expires='+oDate;
     }
-
     function getCookie(name) {
         var arr=document.cookie.split('; ');
 
@@ -70,12 +70,23 @@
         }
         return '';
     }
-
-    if () {}
-
-    log.onclick = function () {
-        setCookie('userName',txto.value,14)
+    function removeCookie(name) {
+        setCookie(name, 1, -1);
     }
-    txto.value=getCookie('userName')
+
+    if (bz.checked) {
+        setCookie('userName',txto.value,14)
+    }else{
+        removeCookie('userName')
+    }
+    txto.value = getCookie('userName')
+
+    bz.onclick = function () {
+        if (bz.checked) {
+            bz.checked=true
+        }else {
+            bz.checked=false
+        }
+    }
 </script>
 </html>
