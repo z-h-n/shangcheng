@@ -34,12 +34,13 @@
 </body>
 <script src="/js/jquery.js"></script>
 <script src="/js/bootstrap.min.js"></script>
+<script src="/js/md5.js"></script>
 <script>
     $(".ashore").click(function(){
         $.post("/login",
             {
                 userName:$('.txto').val(),
-                passWord:$('.txtt').val()
+                passWord:md5($('.txtt').val())
             },
             function(data,status){
                 if (data.errorNo == 0) {
@@ -73,11 +74,12 @@
     function removeCookie(name) {
         setCookie(name, 1, -1);
     }
-
-    if (bz.checked) {
-        setCookie('userName',txto.value,14)
-    }else{
-        removeCookie('userName')
+    log.onclick = function () {
+        if (bz.checked) {
+            setCookie('userName', txto.value, 14)
+        } else {
+            removeCookie('userName')
+        }
     }
     txto.value = getCookie('userName')
 

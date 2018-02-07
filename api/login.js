@@ -6,7 +6,7 @@
  **/
 
 module.exports = function (req, res, next) {
-    if (req.body.userName == '942785030' && req.body.passWord == '123456') {
+    if (req.body.userName == process.env.AdminName && req.body.passWord == process.env.AdminPassword) {
         req.session.user = req.body.userName
         res.send({errorNo: 0, message: '登陆成功'})
     } else {
